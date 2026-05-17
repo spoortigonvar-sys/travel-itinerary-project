@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: '/api' });
+const api = axios.create({
+  baseURL: process.env.https://travel-backend-csh0.onrender.com/|| "http://localhost:5000/api",
+});
 
 api.interceptors.request.use((req) => {
   const token = localStorage.getItem("token");
@@ -39,3 +41,4 @@ export const authAPI = {
 };
 
 export default api;
+
